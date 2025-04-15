@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instituto</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white  ">
+
+  <header class="sticky top-0 z-50 bg-gradient-to-r from-[#5e4cb1] to-[#0c8fe0] shadow">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-2 text-white">
+          <i class="bi bi-house-fill text-xl"></i>
+          <span class="font-semibold">Inicio</span>
+        </div>
+  
+        <button id="menuToggle" class="md:hidden text-white text-2xl focus:outline-none">
+          <i class="bi bi-list"></i>
+        </button>
+  
+        <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-white">
+          <div class="relative group">
+            <button class="flex items-center space-x-1">
+              <i class="bi bi-people-fill"></i>
+              <span>¿Quiénes somos?</span>
+              <i class="bi bi-caret-down-fill text-xs"></i>
+            </button>
+            <div class="absolute hidden group-hover:block bg-[#0c8fe0] mt-2 rounded shadow-lg py-2 w-48 z-50">
+              <a href="#" class="block px-4 py-2 hover:bg-[#005f9e]">Historia</a>
+              <a href="#" class="block px-4 py-2 hover:bg-[#005f9e]">Misión y Visión</a>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center space-x-1">
+              <i class="bi bi-journal-bookmark-fill"></i>
+              <span>Admisión</span>
+              <i class="bi bi-caret-down-fill text-xs"></i>
+            </button>
+            <div class="absolute hidden group-hover:block bg-[#0c8fe0] mt-2 rounded shadow-lg py-2 w-48 z-50">
+              <a href="#" class="block px-4 py-2 hover:bg-[#005f9e]">Requisitos</a>
+              <a href="#" class="block px-4 py-2 hover:bg-[#005f9e]">Fechas</a>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="flex items-center space-x-1">
+              <i class="bi bi-mortarboard-fill"></i>
+              <span>Nuestras carreras</span>
+              <i class="bi bi-caret-down-fill text-xs"></i>
+            </button>
+            <div class="absolute hidden group-hover:block bg-[#0c8fe0] mt-2 rounded shadow-lg py-2 w-48 z-50">
+              <a href="#" class="block px-4 py-2 hover:bg-[#005f9e]">Sistemas Informáticos</a>
+              <a href="#" class="block px-4 py-2 hover:bg-[#005f9e]">Telecomunicaciones</a>
+              <a href="#" class="block px-4 py-2 hover:bg-[#005f9e]">Secretariado Ejecutivo</a>
+            </div>
+          </div>
+          <a href="#" class="flex items-center space-x-1 hover:underline">
+            <i class="bi bi-link-45deg"></i>
+            <span>Plataforma Virtual</span>
+          </a>
+          <a href="Formulario.html" class="flex items-center space-x-1 hover:underline">
+            <i class="bi bi-person-vcard-fill"></i>
+            <span>Contacto</span>
+          </a>
+        </nav>
+  
+        <div class="relative">
+          <button id="configBtn" class="bg-blue-500 p-2 rounded-full focus:outline-none">
+            <i class="bi bi-gear-fill text-white text-xl"></i>
+          </button>
+          <div id="configMenu" class="hidden absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg z-50">
+            <a href="https://facebook.com" target="_blank" class="flex items-center px-4 py-2 hover:bg-gray-100">
+              <i class="bi bi-facebook text-blue-600 mr-2"></i> Facebook
+            </a>
+            <a href="https://instagram.com" target="_blank" class="flex items-center px-4 py-2 hover:bg-gray-100">
+              <i class="bi bi-instagram text-pink-500 mr-2"></i> Instagram
+            </a>
+            <a href="https://wa.me/" target="_blank" class="flex items-center px-4 py-2 hover:bg-gray-100">
+              <i class="bi bi-whatsapp text-green-500 mr-2"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+  
+      <div id="mobileMenu" class="md:hidden hidden flex-col space-y-2 mt-2 text-white font-medium">
+        <a href="#" class="flex items-center space-x-1">
+          <i class="bi bi-people-fill"></i>
+          <span>¿Quiénes somos?</span>
+        </a>
+        <a href="#" class="flex items-center space-x-1">
+          <i class="bi bi-journal-bookmark-fill"></i>
+          <span>Admisión</span>
+        </a>
+        <a href="#" class="flex items-center space-x-1">
+          <i class="bi bi-mortarboard-fill"></i>
+          <span>Nuestras carreras</span>
+        </a>
+        <a href="#" class="flex items-center space-x-1">
+          <i class="bi bi-link-45deg"></i>
+          <span>Plataforma Virtual</span>
+        </a>
+        <a href="#" class="flex items-center space-x-1">
+          <i class="bi bi-person-vcard-fill"></i>
+          <span>Contacto</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+  
+    document.getElementById('configBtn').addEventListener('click', function () {
+      document.getElementById('configMenu').classList.toggle('hidden');
+    });
+  </script>
+  
+
+<section class="relative w-full flex justify-center items-center bg-black">
+  <img src="fondo2022.jpg" alt="Fondo Instituto" class="w-full max-w-[1600px] h-auto object-contain mt-0">
+</section>
+
+<section class="py-10 bg-white text-center">
+  <div class="text-center my-12">
+    <div class="flex items-center justify-center mb-2">
+      <div class="flex-grow border-t border-gray-300 mx-4"></div>
+      <h2 class="text-3xl font-semibold text-gray-800">Ven y estudia</h2>
+      <div class="flex-grow border-t border-gray-300 mx-4"></div>
+    </div>
+    <p class="text-gray-500 text-lg">Te invitamos a forjarte un futuro diferente estudiando en nuestra institución</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
+    <div onclick="this.classList.toggle('flipped')" class="card-wrapper">
+      <div class="card-inner">
+        <div class="card-front border-gray-300 rounded-lg shadow-lg overflow-hidden">
+          <img src="images.jpeg" alt="Sistemas Informáticos" class="w-full h-56 object-cover">
+          <div class="flex justify-center -mt-10">
+            <div class="bg-gradient-to-r from-purple-600 to-blue-500 rounded-full p-4 shadow-lg">
+              <i class="bi bi-code-slash text-white text-3xl"></i>
+            </div>
+          </div>
+          <div class="py-6 bg-white">
+            <h3 class="text-xl font-medium text-black">Sistemas Informáticos</h3>
+            <p class="text-gray-500">Técnico Superior</p>
+          </div>
+        </div>
+        <div class="card-back bg-white flex items-center justify-center p-6">
+          <p class="text-gray-700">Aprende desarrollo de software, redes, seguridad y bases de datos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div onclick="this.classList.toggle('flipped')" class="card-wrapper">
+      <div class="card-inner">
+        <div class="card-front border-gray-300 rounded-lg shadow-lg overflow-hidden">
+          <img src="imagen2.jpg" alt="Secretariado Ejecutivo" class="w-full h-56 object-cover">
+          <div class="flex justify-center -mt-10">
+            <div class="bg-gradient-to-r from-purple-600 to-blue-500 rounded-full p-4 shadow-lg">
+              <i class="bi bi-bar-chart-line text-white text-3xl"></i>
+            </div>
+          </div>
+          <div class="py-6 bg-white">
+            <h3 class="text-xl font-medium text-black">Secretariado Ejecutivo</h3>
+            <p class="text-gray-500">Técnico Superior</p>
+          </div>
+        </div>
+        <div class="card-back bg-white flex items-center justify-center p-6">
+          <p class="text-gray-700">Gestión administrativa, comunicación y habilidades empresariales clave.</p>
+        </div>
+      </div>
+    </div>
+
+    <div onclick="this.classList.toggle('flipped')" class="card-wrapper">
+      <div class="card-inner">
+        <div class="card-front border-gray-300 rounded-lg shadow-lg overflow-hidden">
+          <img src="imagen3.png" alt="Telecomunicaciones" class="w-full h-56 object-cover">
+          <div class="flex justify-center -mt-10">
+            <div class="bg-gradient-to-r from-purple-600 to-blue-500 rounded-full p-4 shadow-lg">
+              <i class="bi bi-diagram-3-fill text-white text-3xl"></i>
+            </div>
+          </div>
+          <div class="py-6 bg-white">
+            <h3 class="text-xl font-medium text-black">Telecomunicaciones</h3>
+            <p class="text-gray-500">Técnico Superior</p>
+          </div>
+        </div>
+        <div class="card-back bg-white flex items-center justify-center p-6">
+          <p class="text-gray-700">Domina redes, fibra óptica, radiofrecuencia y conectividad digital.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-16 bg-white text-center">
+    <div class="text-center mb-12">
+      <div class="flex items-center justify-center mb-4">
+        <div class="flex-grow border-t border-gray-300 mx-4"></div>
+        <h2 class="text-3xl font-semibold text-gray-800">Misión - Visión - Filosofía</h2>
+        <div class="flex-grow border-t border-gray-300 mx-4"></div>
+      </div>
+      <p class="text-gray-600 max-w-4xl mx-auto text-lg">
+        Formamos Profesionales idóneos en las carreras de Secretariado Ejecutivo, Sistemas Informáticos y Telecomunicaciones a nivel de Técnico Superior, con conocimientos sólidos teóricos y prácticos para que sean capaces de desenvolverse eficientemente, con solvencia y ética en el mercado laboral.
+      </p>
+    </div>
+  
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 px-6 max-w-7xl mx-auto">
+      
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 mb-4 text-blue-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-full h-full" viewBox="0 0 24 24">
+            <path d="M16 4h-1V2H9v2H8c-1.1 0-2 .9-2 2v1h12V6c0-1.1-.9-2-2-2zM6 8v2h12V8H6zm0 4v2h12v-2H6zm0 4v2c0 1.1.9 2 2 2h1v2h6v-2h1c1.1 0 2-.9 2-2v-2H6z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Filosofía</h3>
+        <p class="text-gray-600 text-sm">
+          Impartir un currículo actualizado y planificado que parte de las experiencias y de las necesidades de los estudiantes y facilitar su desarrollo integral y su capacitación en la especialidad elegida.
+        </p>
+      </div>
+  
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 mb-4 text-blue-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-full h-full" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 5.01 3.68 9.13 8.44 9.88.62.11.85-.27.85-.6v-2.2c-3.44.75-4.17-1.66-4.17-1.66-.56-1.42-1.38-1.8-1.38-1.8-1.13-.78.09-.76.09-.76 1.25.09 1.91 1.29 1.91 1.29 1.12 1.91 2.94 1.36 3.66 1.04.11-.81.44-1.36.8-1.67-2.75-.31-5.64-1.38-5.64-6.14 0-1.36.48-2.47 1.27-3.34-.13-.31-.55-1.56.12-3.25 0 0 1.03-.33 3.36 1.27a11.7 11.7 0 0 1 3.06-.41c1.04 0 2.09.14 3.06.41 2.32-1.6 3.35-1.27 3.35-1.27.67 1.69.25 2.94.12 3.25.79.87 1.27 1.98 1.27 3.34 0 4.78-2.9 5.82-5.66 6.13.45.39.86 1.16.86 2.35v3.48c0 .34.23.72.86.6C18.32 21.13 22 17.01 22 12c0-5.52-4.48-10-10-10z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Misión</h3>
+        <p class="text-gray-600 text-sm">
+          Promover una calidad educativa, arraigada en la cultura de nuestro pueblo y en nuestro tiempo. Estimular, en los estudiantes, conciencia crítica, actitud solidaria, libertad de espíritu, honestidad y responsabilidad...
+        </p>
+      </div>
+  
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 mb-4 text-blue-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-full h-full" viewBox="0 0 24 24">
+            <path d="M19.14,12.94a7.14,7.14,0,1,1-7.14-7.14A7.14,7.14,0,0,1,19.14,12.94ZM10,11h4v2H10Z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Visión</h3>
+        <p class="text-gray-600 text-sm">
+          Promover a los jóvenes bachilleres de escasos recursos económicos, formando profesionales capacitados de manera teórico práctica, con formación integral cimentada en los valores cristianos.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-white">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800">Galería de imágenes</h2>
+      <p class="text-gray-500 mt-2">Instituto Técnico Jesús María</p>
+    </div>
+  
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="01.jpg" alt="Imagen 1" class="w-full h-auto object-cover aspect-[1910/745]">
+      </div>
+  
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="02.jpg" alt="Imagen 2" class="w-full h-auto object-cover aspect-[1910/745]">
+      </div>
+  
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="11.jpg" alt="Imagen 3" class="w-full h-auto object-cover aspect-[1910/745]">
+      </div>
+  
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="14.jpg" alt="Imagen 4" class="w-full h-auto object-cover aspect-[1910/745]">
+      </div>
+    </div>
+  </section>
+  
+
+<section class="bg-white py-10">
+ 
+    <div class="flex items-center justify-center mb-10">
+      <div class="flex-grow h-px bg-gray-300"></div>
+      <h2 class="mx-4 text-3xl font-light text-gray-800">Noticias recientes</h2>
+      <div class="flex-grow h-px bg-gray-300"></div>
+    </div>
+  
+    <div id="noticiasCarrusel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner px-4">
+        <div class="carousel-item active">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow p-4">
+              <img src="imagen4 (1).png" alt="Imagen 1" class="rounded-t-md w-full h-48 object-cover mb-4">
+              <h3 class="text-lg font-semibold text-black">Convocatoria a Examen de Grado</h3>
+              <p class="text-sm text-gray-600 mt-2">📅 Miércoles, 17/Noviembre/2021<br>El Instituto Técnico Jesús María...</p>
+              <a href="#" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm">ARTÍCULO COMPLETO</a>
+            </div>
+  
+            <div class="bg-white rounded-lg shadow p-4">
+              <img src="imagen4 (2).png" alt="Imagen 2" class="rounded-t-md w-full h-48 object-cover mb-4">
+              <h3 class="text-lg font-semibold text-black">CONVENIO DE TELEDUCACIÓN GANADOR ENTEL ORURO</h3>
+              <p class="text-sm text-gray-600 mt-2">📅 Viernes, 09/Octubre/2020<br>Gobernación de Oruro en convenio con ENTEL...</p>
+              <a href="#" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm">ARTÍCULO COMPLETO</a>
+            </div>
+  
+            <div class="bg-white rounded-lg shadow p-4">
+              <img src="imagen4 (3).png" alt="Imagen 3" class="rounded-t-md w-full h-48 object-cover mb-4">
+              <h3 class="text-lg font-semibold text-black">Convocatoria a Examen de Grado</h3>
+              <p class="text-sm text-gray-600 mt-2">📅 Viernes, 06/Marzo/2020<br>El Instituto Técnico Jesús María...</p>
+              <a href="#" class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm">ARTÍCULO COMPLETO</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <button class="carousel-control-prev" type="button" data-bs-target="#noticiasCarrusel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-full" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#noticiasCarrusel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-full" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+  
+
+  <section class="bg-white py-10">
+    <body class="bg-gray-100 py-12 px-4">
+
+        <div class="max-w-7xl mx-auto text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800">Testimonios</h2>
+          <p class="text-gray-500 mt-2">Conoce las historias de quienes forman parte del Instituto Jesús María</p>
+        </div>
+      
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+          
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center relative pt-16">
+            <img src="logo1 (1).png" alt="Griselda" class="w-24 h-24 rounded-full mx-auto absolute -top-12 shadow-lg" />
+            <p class="text-gray-600 italic text-lg leading-relaxed mt-4 mb-4">
+              "Ya tienes trabajo, si lo quieres", fueron las mágicas palabras de la Hna. San Luis... Este fue el inicio de mi gran camino en la docencia.
+            </p>
+            <h3 class="text-lg font-semibold text-gray-800">Lic. Griselda Tapia</h3>
+            <p class="text-sm text-gray-500">Docente del Instituto</p>
+          </div>
+      
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center relative pt-16">
+            <img src="logo1 (2).png" alt="Juan" class="w-24 h-24 rounded-full mx-auto absolute -top-12 shadow-lg" />
+            <p class="text-gray-600 italic text-lg leading-relaxed mt-4 mb-4">
+              Ser parte del Instituto Jesús María es uno de mis mayores orgullos. Me formó como profesional y como persona.
+            </p>
+            <h3 class="text-lg font-semibold text-gray-800">Juan Pérez</h3>
+            <p class="text-sm text-gray-500">Egresado</p>
+          </div>
+      
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center relative pt-16">
+            <img src="logo1 (1).png" alt="Ana" class="w-24 h-24 rounded-full mx-auto absolute -top-12 shadow-lg" />
+            <p class="text-gray-600 italic text-lg leading-relaxed mt-4 mb-4">
+              En este instituto encontré una familia y una vocación. Gracias al Intjem por cambiar mi vida.
+            </p>
+            <h3 class="text-lg font-semibold text-gray-800">Ana Torres</h3>
+            <p class="text-sm text-gray-500">Exdocente</p>
+          </div>
+      
+        </div>
+      </body>
+      <footer class="bg-gradient-to-r from-purple-700 to-blue-500 text-white pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-5 gap-6">
+         
+          <div class="col-span-1 flex items-start justify-center md:justify-start">
+            <img src="logo.png" alt="Logo" class="w-24 h-24" />
+          </div>
+      
+        
+          <div>
+            <h3 class="font-bold mb-2">EMPEZAR</h3>
+            <ul class="space-y-1">
+              <li><a href="#" class="hover:underline">Inicio</a></li>
+              <li><a href="#" class="hover:underline">¿Quiénes somos?</a></li>
+              <li><a href="#" class="hover:underline">Admisión</a></li>
+              <li><a href="#" class="hover:underline">Nuestras carreras</a></li>
+            </ul>
+          </div>
+      
+         
+          <div>
+            <h3 class="font-bold mb-2">APOYO</h3>
+            <ul class="space-y-1">
+              <li><a href="#" class="hover:underline">Admisión</a></li>
+              <li><a href="#" class="hover:underline">Preguntas más frecuentes</a></li>
+              <li><a href="#" class="hover:underline">Blog</a></li>
+            </ul>
+          </div>
+      
+          
+          <div>
+            <h3 class="font-bold mb-2">LEGAL</h3>
+            <ul class="space-y-1">
+              <li><a href="#" class="hover:underline">Términos de servicio</a></li>
+              <li><a href="#" class="hover:underline">Términos de uso</a></li>
+              <li><a href="#" class="hover:underline">Política de privacidad</a></li>
+            </ul>
+          </div>
+      
+         
+          <div>
+            <h3 class="font-bold mb-2">CONTÁCTANOS</h3>
+            <ul class="space-y-1">
+              <li><a href="#" class="hover:underline">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+      
+        
+        <div class="border-t border-white/30 my-6 mx-6"></div>
+      
+        
+        <div class="max-w-4xl mx-auto px-6">
+          <iframe class="w-full h-60 rounded-lg border-none"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.0189808047546!2d-66.9640469!3d-17.9635564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e374f04186a179%3A0x1bc3734c0f1f5dd6!2sInstituto%20T%C3%A9cnico%20Jes%C3%BAs%20Mar%C3%ADa!5e0!3m2!1ses!2sbo!4v1615930671570!5m2!1ses!2sbo"
+            allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      
+        
+        <div class="mt-6 flex justify-center gap-4 flex-wrap px-6">
+          <a href="#" class="text-white bg-blue-600 p-3 rounded-full hover:bg-blue-700"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white bg-sky-400 p-3 rounded-full hover:bg-sky-500"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white bg-red-500 p-3 rounded-full hover:bg-red-600"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="text-white bg-yellow-400 p-3 rounded-full hover:bg-yellow-500"><i class="fas fa-map"></i></a>
+          <a href="#" class="text-white bg-green-500 p-3 rounded-full hover:bg-green-600"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="text-white bg-gray-600 p-3 rounded-full hover:bg-gray-700"><i class="fas fa-envelope"></i></a>
+          <a href="#" class="text-white bg-red-600 p-3 rounded-full hover:bg-red-700"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="text-white bg-sky-500 p-3 rounded-full hover:bg-sky-600"><i class="fab fa-skype"></i></a>
+          <a href="#" class="text-white bg-slate-800 p-3 rounded-full hover:bg-slate-900"><i class="fab fa-instagram"></i></a>
+        </div>
+      
+     
+        <p class="text-center mt-6 text-sm text-white/80 px-6">
+          Copyright © 2024 Instituto Técnico Jesús María Todos los derechos reservados.
+        </p>
+      </footer>
+      <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+   
+      </body>
+  </html>
