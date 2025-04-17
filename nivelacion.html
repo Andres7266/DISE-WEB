@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-6 flex items-center gap-2">
+      <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 3l9 8h-3v9h-4v-5H10v5H6v-9H3l9-8z" />
+      </svg>
+      
+      Nueva Propiedad
+    </h2>
+  
+    <form class="space-y-6" action="#" method="POST">
+     
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label for="tipo" class="block text-sm font-medium text-gray-700 mb-1">Tipo de Propiedad*</label>
+          <select id="tipo" name="tipo" required class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            <option value="">Seleccionar...</option>
+            <option value="casa">Casa</option>
+            <option value="departamento">Departamento</option>
+          </select>
+        </div>
+  
+        <div>
+          <label for="transaccion" class="block text-sm font-medium text-gray-700 mb-1">Transacción*</label>
+          <select id="transaccion" name="transaccion" required class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            <option value="">Seleccionar...</option>
+            <option value="venta">Venta</option>
+            <option value="alquiler">Alquiler</option>
+          </select>
+        </div>
+      </div>
+  
+    
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label for="precio" class="block text-sm font-medium text-gray-700 mb-1">Precio (BOB)*</label>
+          <div class="flex items-center rounded-lg border border-gray-300 shadow-sm">
+            <span class="px-3 bg-blue-100 text-blue-700 font-semibold">Bs</span>
+            <input id="precio" name="precio" type="number" min="1" required class="w-full px-3 py-2 focus:ring-blue-500 focus:border-blue-500 rounded-r-lg border-0">
+          </div>
+        </div>
+  
+        <div>
+          <label for="area" class="block text-sm font-medium text-gray-700 mb-1">Área (m²)*</label>
+          <div class="flex items-center rounded-lg border border-gray-300 shadow-sm">
+            <input id="area" name="area" type="number" min="1" required class="w-full px-3 py-2 focus:ring-blue-500 focus:border-blue-500 border-0 rounded-l-lg">
+            <span class="px-3 bg-blue-100 text-blue-700 font-semibold">m²</span>
+          </div>
+        </div>
+  
+        <div>
+          <label for="moneda" class="block text-sm font-medium text-gray-700 mb-1">Moneda*</label>
+          <select id="moneda" name="moneda" required class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            <option value="">Seleccionar...</option>
+            <option value="BOB">BOB</option>
+            <option value="USD">USD</option>
+          </select>
+        </div>
+      </div>
+  
+   
+      <div>
+        <label for="titulo" class="block text-sm font-medium text-gray-700 mb-1">Título del Anuncio*</label>
+        <input id="titulo" name="titulo" type="text" required class="w-full border-gray-300 rounded-lg shadow-sm px-3 py-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Ej: Casa moderna con piscina en zona residencial">
+      </div>
+  
+     
+      <div>
+        <label for="descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción Detallada*</label>
+        <textarea id="descripcion" name="descripcion" minlength="20" required rows="4" class="w-full border-gray-300 rounded-lg shadow-sm px-3 py-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+        <p class="text-sm text-gray-500 mt-1">Debe tener al menos 20 caracteres.</p>
+      </div>
+  
+  
+      <div class="flex justify-end">
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow">
+          Enviar →
+        </button>
+      </div>
+    </form>
+  </div>
+  
+
+</body>
+</html>
